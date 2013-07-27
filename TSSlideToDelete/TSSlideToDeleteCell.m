@@ -76,7 +76,6 @@ typedef enum {
         CGFloat yCenter = cell.contentView.center.y;
         CGFloat finalXPosition = cell.center.x;
 
-        NSLog(@"x-offset of content view end of gesture: %f", cell.contentView.frame.origin.x);
         // Animate cell to correct final position
         if (slideState == TSSlideStateToTheLeft && xOffset < -xThreshold) {
             finalXPosition = -(cell.contentView.bounds.size.width  / 2.0);
@@ -86,12 +85,14 @@ typedef enum {
         }
                 
         CGPoint finalCenterPosition = CGPointMake(finalXPosition, yCenter);
-        [UIView animateWithDuration:0.3f animations:^{
+        CGPoint velocity = [sender velocityInView:cell];
+        NSTimeInterval duration = fmaxf(0.1f,fminf(0.3f, fabs((xOffset - finalXPosition) / velocity.x)));
+ 
+        [UIView animateWithDuration:duration animations:^{
             cell.contentView.center = finalCenterPosition;
             cell.selectedBackgroundView.center = finalCenterPosition;
-            NSLog(@"x-position of content view after assignment: %f", cell.contentView.frame.origin.x);
         } completion:^(BOOL completion){
-            NSLog(@"x-position of content view after animation: %f", cell.contentView.frame.origin.x);
+            
         }];
         
         slideState = TSSlideStateDormant;
