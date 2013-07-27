@@ -55,6 +55,8 @@ typedef enum {
     UITableViewCell * cell = (UITableViewCell *)sender.view;
     CGPoint translation = [sender translationInView:cell];
     
+    CGFloat xThreshold = 50.0;
+    
     if (translation.x < 0 && !(self.slideLeftDisabled && slideState == TSSlideStateDormant)) {
         slideState = TSSlideStateToTheLeft;
         cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
@@ -68,9 +70,29 @@ typedef enum {
         [sender setTranslation:CGPointMake(0, 0) inView:cell];
     }
     
+    
     if (sender.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"Gesture State Ended ...");
+        CGFloat xOffset = cell.contentView.center.x - cell.center.x;
+        CGFloat yCenter = cell.contentView.center.y;
+        CGFloat finalXPosition = cell.center.x;
+
+        NSLog(@"x-offset of content view end of gesture: %f", cell.contentView.frame.origin.x);
         // Animate cell to correct final position
+        if (slideState == TSSlideStateToTheLeft && xOffset < -xThreshold) {
+            finalXPosition = -(cell.contentView.bounds.size.width  / 2.0);
+        }
+        if (slideState == TSSLideStateToTheRight && xOffset > xThreshold) {
+            finalXPosition = (cell.contentView.bounds.size.width  * 1.5);
+        }
+                
+        CGPoint finalCenterPosition = CGPointMake(finalXPosition, yCenter);
+        [UIView animateWithDuration:0.3f animations:^{
+            cell.contentView.center = finalCenterPosition;
+            cell.selectedBackgroundView.center = finalCenterPosition;
+            NSLog(@"x-position of content view after assignment: %f", cell.contentView.frame.origin.x);
+        } completion:^(BOOL completion){
+            NSLog(@"x-position of content view after animation: %f", cell.contentView.frame.origin.x);
+        }];
         
         slideState = TSSlideStateDormant;
     }

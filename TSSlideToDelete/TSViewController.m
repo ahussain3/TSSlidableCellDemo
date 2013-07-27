@@ -78,12 +78,16 @@
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.backgroundColor = [UIColor purpleColor];
     cell.contentView.backgroundColor = [UIColor purpleColor];
+    
     UIView *backgroundView = [[UIView alloc] initWithFrame:cell.frame];
     backgroundView.backgroundColor = [UIColor blackColor];
     cell.backgroundView = backgroundView;
+    
     UIView *selectedView = [[UIView alloc] initWithFrame:cell.frame];
     selectedView.backgroundColor = [UIColor greenColor];
     cell.selectedBackgroundView = selectedView;
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     // Create slide views
     UIView *slideLeftView = [[UIView alloc] initWithFrame:cell.frame];
