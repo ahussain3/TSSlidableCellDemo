@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSSlideToDeleteCell : UITableViewCell
+@interface TSSlideToDeleteCell : UITableViewCell {
+    NSUInteger slideState;
+}
 
-@property (nonatomic) BOOL slideLeftEnabled;
-@property (nonatomic) BOOL slideRightEnabled;
+@property (nonatomic) BOOL slideLeftDisabled;
+@property (nonatomic) BOOL slideRightDisabled;
 
 @end
