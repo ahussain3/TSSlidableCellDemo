@@ -25,7 +25,7 @@ typedef enum {
         [self addGestureRecognizer:pan];
         
         slideState = TSSlideStateDormant;
-        
+        self.slideRightDisabled = TRUE;
         
         
     }
@@ -51,13 +51,12 @@ typedef enum {
         cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
         cell.selectedBackgroundView.center = CGPointMake(cell.selectedBackgroundView.center.x + translation.x, cell.selectedBackgroundView.center.y);
         [sender setTranslation:CGPointMake(0, 0) inView:cell];
+        
     } else if (translation.x > 0 && !(self.slideRightDisabled && slideState == TSSlideStateDormant)) {
         slideState = TSSLideStateToTheRight;
         cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
         cell.selectedBackgroundView.center = CGPointMake(cell.selectedBackgroundView.center.x + translation.x, cell.selectedBackgroundView.center.y);
         [sender setTranslation:CGPointMake(0, 0) inView:cell];
-    } else {
-        return;
     }
     
     if (sender.state == UIGestureRecognizerStateEnded) {
@@ -66,8 +65,6 @@ typedef enum {
         
         slideState = TSSlideStateDormant;
     }
-    
-    
 }
 
 @end
