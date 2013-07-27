@@ -94,18 +94,20 @@
     slideLeftView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     slideLeftView.backgroundColor = [UIColor orangeColor];
     cell.slideToLeftView = slideLeftView;
-    
-    UIView *slideRightView = [[UIView alloc] initWithFrame:cell.frame];
-    slideRightView.backgroundColor = [UIColor greenColor];
-    cell.slideToRightView = slideLeftView;
+
+//    Uncomment to implement slide to the right
+//    UIView *slideRightView = [[UIView alloc] initWithFrame:cell.frame];
+//    slideRightView.backgroundColor = [UIColor greenColor];
+//    cell.slideToRightView = slideRightView;
     
     UIView *slideLeftHighlightedView = [[UIView alloc] initWithFrame:cell.frame];
     slideLeftHighlightedView.backgroundColor = [UIColor redColor];
-    cell.slideToLeftHighlightedView = slideLeftView;
-    
-    UIView *slideRightHighlightedView = [[UIView alloc] initWithFrame:cell.frame];
-    slideRightHighlightedView.backgroundColor = [UIColor blueColor];
-    cell.slideToRightHighlightedView = slideLeftView;
+    cell.slideToLeftHighlightedView = slideLeftHighlightedView;
+
+//    Uncomment to implement slide to the right
+//    UIView *slideRightHighlightedView = [[UIView alloc] initWithFrame:cell.frame];
+//    slideRightHighlightedView.backgroundColor = [UIColor blueColor];
+//    cell.slideToRightHighlightedView = slideLeftHighlightedView;
     
     return cell;
 }

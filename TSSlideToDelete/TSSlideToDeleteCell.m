@@ -11,8 +11,8 @@
 typedef enum {
     TSSlideStateDormant,
     TSSlideStateToTheLeft,
-    TSSLideStateToTheRight
-} TSSLideState;
+    TSSlideStateToTheRight
+} TSSlideState;
 
 @interface TSSlideToDeleteCell () {
     
@@ -31,6 +31,11 @@ typedef enum {
         [self addGestureRecognizer:pan];
         
         slideState = TSSlideStateDormant;
+        
+        /*******************************/
+        // Haven't had time to work the kinks out of two way sliding //
+        self.slideRightDisabled = TRUE;
+        /*******************************/
     }
     return self;
 }
@@ -38,9 +43,17 @@ typedef enum {
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    if (!(self.slideToLeftView == nil)) {
-        self.slideToLeftView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    if (self.slideToLeftView != nil) {
         [self insertSubview:self.slideToLeftView aboveSubview:self.backgroundView];
+    }
+    if (self.slideToLeftHighlightedView != nil) {
+        [self insertSubview:self.slideToLeftHighlightedView aboveSubview:self.backgroundView];
+    }
+    if (self.slideToRightView != nil) {
+        [self insertSubview:self.slideToRightView aboveSubview:self.backgroundView];
+    }
+    if (self.slideToRightHighlightedView != nil) {
+        [self insertSubview:self.slideToRightHighlightedView aboveSubview:self.backgroundView];
     }
 }
 
@@ -51,6 +64,30 @@ typedef enum {
     // Configure the view for the selected state
 }
 
+- (void)showViewsForSlideState:(NSInteger)state {
+    if (state == slideState) return;
+    
+//    Unfinished slide to the right feature. Feel free to play with it.
+//    if (state == TSSlideStateToTheLeft) {
+//        self.slideToLeftView.hidden = NO;
+//        self.slideToLeftHighlightedView.hidden = NO;
+//        self.slideToRightView.hidden = YES;
+//        self.slideToRightHighlightedView.hidden = YES;
+//        
+//    } else if (state == TSSlideStateToTheRight) {
+//        self.slideToLeftView.hidden = YES;
+//        self.slideToLeftHighlightedView.hidden = YES;
+//        self.slideToRightView.hidden = NO;
+//        self.slideToRightHighlightedView.hidden = NO;
+//        
+//    } else {
+//        self.slideToLeftView.hidden = NO;
+//        self.slideToLeftHighlightedView.hidden = NO;
+//        self.slideToRightView.hidden = NO;
+//        self.slideToRightHighlightedView.hidden = NO;
+//    }
+}
+
 - (void)slideGestureHandler:(UIPanGestureRecognizer *)sender {
     UITableViewCell * cell = (UITableViewCell *)sender.view;
     CGPoint translation = [sender translationInView:cell];
@@ -58,13 +95,15 @@ typedef enum {
     CGFloat xThreshold = 50.0;
     
     if (translation.x < 0 && !(self.slideLeftDisabled && slideState == TSSlideStateDormant)) {
+        [self showViewsForSlideState:TSSlideStateToTheLeft];
         slideState = TSSlideStateToTheLeft;
         cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
         cell.selectedBackgroundView.center = CGPointMake(cell.selectedBackgroundView.center.x + translation.x, cell.selectedBackgroundView.center.y);
         [sender setTranslation:CGPointMake(0, 0) inView:cell];
         
     } else if (translation.x > 0 && !(self.slideRightDisabled && slideState == TSSlideStateDormant)) {
-        slideState = TSSLideStateToTheRight;
+        [self showViewsForSlideState:TSSlideStateToTheRight];
+        slideState = TSSlideStateToTheRight;
         cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
         cell.selectedBackgroundView.center = CGPointMake(cell.selectedBackgroundView.center.x + translation.x, cell.selectedBackgroundView.center.y);
         [sender setTranslation:CGPointMake(0, 0) inView:cell];
@@ -80,7 +119,7 @@ typedef enum {
         if (slideState == TSSlideStateToTheLeft && xOffset < -xThreshold) {
             finalXPosition = -(cell.contentView.bounds.size.width  / 2.0);
         }
-        if (slideState == TSSLideStateToTheRight && xOffset > xThreshold) {
+        if (slideState == TSSlideStateToTheRight && xOffset > xThreshold) {
             finalXPosition = (cell.contentView.bounds.size.width  * 1.5);
         }
                 
@@ -93,10 +132,11 @@ typedef enum {
             cell.selectedBackgroundView.center = finalCenterPosition;
         } completion:^(BOOL completion){
             if (slideState == TSSlideStateToTheLeft) [self.delegate respondToCellSlidLeft:self];
-            if (slideState == TSSLideStateToTheRight) [self.delegate respondToCellSlidRight:self];
+            if (slideState == TSSlideStateToTheRight) [self.delegate respondToCellSlidRight:self];
         }];
         
         slideState = TSSlideStateDormant;
+//        [self showViewsForSlideState:TSSlideStateDormant];
     }
     
     [self nextResponder];
