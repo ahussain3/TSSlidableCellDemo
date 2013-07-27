@@ -8,6 +8,11 @@
 
 #import "TSSlideToDeleteCell.h"
 
+typedef enum {
+    TSSlideToTheLeft,
+    TSSLideToTheRight
+} TSSLideDirection;
+
 @implementation TSSlideToDeleteCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -31,6 +36,13 @@
 - (void)dragGestureHandler:(UIPanGestureRecognizer *)sender {
     NSLog(@"Dragging...");
     
+    UITableViewCell * cell = (UITableViewCell *)sender.view;
+    CGPoint translation = [sender translationInView:cell];
+    NSLog(@"translation.x = %f", translation.x);
+    
+    cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
+    cell.selectedBackgroundView.center = CGPointMake(cell.selectedBackgroundView.center.x + translation.x, cell.selectedBackgroundView.center.y);
+    [sender setTranslation:CGPointMake(0, 0) inView:cell];
     
     
 }

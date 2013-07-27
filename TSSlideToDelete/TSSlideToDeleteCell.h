@@ -10,4 +10,7 @@
 
 @interface TSSlideToDeleteCell : UITableViewCell
 
+@property (nonatomic) BOOL slideLeftEnabled;
+@property (nonatomic) BOOL slideRightEnabled;
+
 @end
