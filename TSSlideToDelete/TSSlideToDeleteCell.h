@@ -1,5 +1,5 @@
 //
-//  TSViewController.h
+//  TSSlideToDeleteCell.h
 //  TSSlideToDelete
 //
 //  Created by Awais Hussain on 7/27/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TSViewController : UITableViewController {
-    NSMutableArray *arrayOfCells;
-}
+@interface TSSlideToDeleteCell : UITableViewCell
 
 @end

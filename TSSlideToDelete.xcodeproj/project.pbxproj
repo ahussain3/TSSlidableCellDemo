@@ -17,12 +17,14 @@
 		C8FF161717A3F0DF0064BA83 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8FF161617A3F0DF0064BA83 /* Default@2x.png */; };
 		C8FF161917A3F0DF0064BA83 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8FF161817A3F0DF0064BA83 /* Default-568h@2x.png */; };
 		C8FF161C17A3F0DF0064BA83 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8FF161A17A3F0DF0064BA83 /* MainStoryboard.storyboard */; };
-		C8FF161F17A3F0DF0064BA83 /* TSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF161E17A3F0DF0064BA83 /* TSViewController.m */; };
 		C8FF162717A3F0E00064BA83 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FF162617A3F0E00064BA83 /* SenTestingKit.framework */; };
 		C8FF162817A3F0E00064BA83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FF160217A3F0DF0064BA83 /* UIKit.framework */; };
 		C8FF162917A3F0E00064BA83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FF160417A3F0DF0064BA83 /* Foundation.framework */; };
 		C8FF163117A3F0E00064BA83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8FF162F17A3F0E00064BA83 /* InfoPlist.strings */; };
 		C8FF163417A3F0E00064BA83 /* TSSlideToDeleteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF163317A3F0E00064BA83 /* TSSlideToDeleteTests.m */; };
+		C8FF163F17A3F1CA0064BA83 /* TSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF163E17A3F1CA0064BA83 /* TSViewController.m */; };
+		C8FF164217A3F1F30064BA83 /* TSSlideToDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF164117A3F1F30064BA83 /* TSSlideToDeleteCell.m */; };
+		C8FF164517A3F2240064BA83 /* TSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF164417A3F2240064BA83 /* TSTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +52,18 @@
 		C8FF161617A3F0DF0064BA83 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C8FF161817A3F0DF0064BA83 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C8FF161B17A3F0DF0064BA83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C8FF161D17A3F0DF0064BA83 /* TSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSViewController.h; sourceTree = "<group>"; };
-		C8FF161E17A3F0DF0064BA83 /* TSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSViewController.m; sourceTree = "<group>"; };
 		C8FF162517A3F0E00064BA83 /* TSSlideToDeleteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSSlideToDeleteTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FF162617A3F0E00064BA83 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C8FF162E17A3F0E00064BA83 /* TSSlideToDeleteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TSSlideToDeleteTests-Info.plist"; sourceTree = "<group>"; };
 		C8FF163017A3F0E00064BA83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C8FF163217A3F0E00064BA83 /* TSSlideToDeleteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSSlideToDeleteTests.h; sourceTree = "<group>"; };
 		C8FF163317A3F0E00064BA83 /* TSSlideToDeleteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSSlideToDeleteTests.m; sourceTree = "<group>"; };
+		C8FF163D17A3F1CA0064BA83 /* TSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSViewController.h; sourceTree = "<group>"; };
+		C8FF163E17A3F1CA0064BA83 /* TSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSViewController.m; sourceTree = "<group>"; };
+		C8FF164017A3F1F30064BA83 /* TSSlideToDeleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSlideToDeleteCell.h; sourceTree = "<group>"; };
+		C8FF164117A3F1F30064BA83 /* TSSlideToDeleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSlideToDeleteCell.m; sourceTree = "<group>"; };
+		C8FF164317A3F2240064BA83 /* TSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTableViewCell.h; sourceTree = "<group>"; };
+		C8FF164417A3F2240064BA83 /* TSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +125,11 @@
 			children = (
 				C8FF161117A3F0DF0064BA83 /* TSAppDelegate.h */,
 				C8FF161217A3F0DF0064BA83 /* TSAppDelegate.m */,
+				C8FF163D17A3F1CA0064BA83 /* TSViewController.h */,
+				C8FF163E17A3F1CA0064BA83 /* TSViewController.m */,
+				C8FF164317A3F2240064BA83 /* TSTableViewCell.h */,
+				C8FF164417A3F2240064BA83 /* TSTableViewCell.m */,
 				C8FF161A17A3F0DF0064BA83 /* MainStoryboard.storyboard */,
-				C8FF161D17A3F0DF0064BA83 /* TSViewController.h */,
-				C8FF161E17A3F0DF0064BA83 /* TSViewController.m */,
 				C8FF160917A3F0DF0064BA83 /* Supporting Files */,
 			);
 			path = TSSlideToDelete;
@@ -130,6 +138,8 @@
 		C8FF160917A3F0DF0064BA83 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C8FF164017A3F1F30064BA83 /* TSSlideToDeleteCell.h */,
+				C8FF164117A3F1F30064BA83 /* TSSlideToDeleteCell.m */,
 				C8FF160A17A3F0DF0064BA83 /* TSSlideToDelete-Info.plist */,
 				C8FF160B17A3F0DF0064BA83 /* InfoPlist.strings */,
 				C8FF160E17A3F0DF0064BA83 /* main.m */,
@@ -273,7 +283,9 @@
 			files = (
 				C8FF160F17A3F0DF0064BA83 /* main.m in Sources */,
 				C8FF161317A3F0DF0064BA83 /* TSAppDelegate.m in Sources */,
-				C8FF161F17A3F0DF0064BA83 /* TSViewController.m in Sources */,
+				C8FF163F17A3F1CA0064BA83 /* TSViewController.m in Sources */,
+				C8FF164217A3F1F30064BA83 /* TSSlideToDeleteCell.m in Sources */,
+				C8FF164517A3F2240064BA83 /* TSTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
