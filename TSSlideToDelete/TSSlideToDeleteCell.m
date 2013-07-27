@@ -14,6 +14,12 @@ typedef enum {
     TSSLideStateToTheRight
 } TSSLideState;
 
+@interface TSSlideToDeleteCell () {
+    
+}
+
+@end
+
 @implementation TSSlideToDeleteCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -21,15 +27,21 @@ typedef enum {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragGestureHandler:)];
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(slideGestureHandler:)];
         [self addGestureRecognizer:pan];
         
         slideState = TSSlideStateDormant;
-        self.slideRightDisabled = TRUE;
-        
-        
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+
+    if (!(self.slideToLeftView == nil)) {
+        self.slideToLeftView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        [self insertSubview:self.slideToLeftView aboveSubview:self.backgroundView];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -39,10 +51,7 @@ typedef enum {
     // Configure the view for the selected state
 }
 
-- (void)dragGestureHandler:(UIPanGestureRecognizer *)sender {
-
-    NSLog(@"Gesture recognizer state: %i", sender.state);
-    
+- (void)slideGestureHandler:(UIPanGestureRecognizer *)sender {
     UITableViewCell * cell = (UITableViewCell *)sender.view;
     CGPoint translation = [sender translationInView:cell];
     
@@ -65,6 +74,8 @@ typedef enum {
         
         slideState = TSSlideStateDormant;
     }
+    
+    [self nextResponder];
 }
 
 @end

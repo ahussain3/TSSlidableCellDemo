@@ -67,7 +67,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TSSlideToDeleteCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
         cell = [[TSTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
@@ -84,6 +84,24 @@
     UIView *selectedView = [[UIView alloc] initWithFrame:cell.frame];
     selectedView.backgroundColor = [UIColor greenColor];
     cell.selectedBackgroundView = selectedView;
+    
+    // Create slide views
+    UIView *slideLeftView = [[UIView alloc] initWithFrame:cell.frame];
+    slideLeftView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    slideLeftView.backgroundColor = [UIColor orangeColor];
+    cell.slideToLeftView = slideLeftView;
+    
+    UIView *slideRightView = [[UIView alloc] initWithFrame:cell.frame];
+    slideRightView.backgroundColor = [UIColor greenColor];
+    cell.slideToRightView = slideLeftView;
+    
+    UIView *slideLeftHighlightedView = [[UIView alloc] initWithFrame:cell.frame];
+    slideLeftHighlightedView.backgroundColor = [UIColor redColor];
+    cell.slideToLeftHighlightedView = slideLeftView;
+    
+    UIView *slideRightHighlightedView = [[UIView alloc] initWithFrame:cell.frame];
+    slideRightHighlightedView.backgroundColor = [UIColor blueColor];
+    cell.slideToRightHighlightedView = slideLeftView;
     
     return cell;
 }

@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TSSlideToDelete/TSSlideToDeleteCell.m"
-         timestampString = "396627815.244762"
+         timestampString = "396633327.510746"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "-dragGestureHandler:"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
+         landmarkName = "-slideGestureHandler:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

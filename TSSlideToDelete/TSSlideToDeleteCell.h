@@ -12,7 +12,14 @@
     NSUInteger slideState;
 }
 
+// Configuration settings
 @property (nonatomic) BOOL slideLeftDisabled;
 @property (nonatomic) BOOL slideRightDisabled;
+
+// Subclass should assign these views. The cell will slide out of the way to reveal these views.
+@property (nonatomic, strong) UIView *slideToLeftView;
+@property (nonatomic, strong) UIView *slideToRightView;
+@property (nonatomic, strong) UIView *slideToLeftHighlightedView;
+@property (nonatomic, strong) UIView *slideToRightHighlightedView;
 
 @end
