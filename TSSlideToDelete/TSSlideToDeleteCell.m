@@ -92,11 +92,15 @@ typedef enum {
     UITableViewCell * cell = (UITableViewCell *)sender.view;
     CGPoint translation = [sender translationInView:cell];
     
-    CGFloat xThreshold = 50.0;
+    CGFloat xThreshold = 100.0;
+    CGFloat xOffset = cell.contentView.center.x - cell.center.x;
+    CGFloat yCenter = cell.contentView.center.y;
+    CGFloat finalXPosition = cell.center.x;
     
     if (translation.x < 0 && !(self.slideLeftDisabled && slideState == TSSlideStateDormant)) {
         [self showViewsForSlideState:TSSlideStateToTheLeft];
         slideState = TSSlideStateToTheLeft;
+        
         cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
         cell.selectedBackgroundView.center = CGPointMake(cell.selectedBackgroundView.center.x + translation.x, cell.selectedBackgroundView.center.y);
         [sender setTranslation:CGPointMake(0, 0) inView:cell];
@@ -109,18 +113,18 @@ typedef enum {
         [sender setTranslation:CGPointMake(0, 0) inView:cell];
     }
     
+    if (xOffset < -xThreshold) {self.slideToLeftView.hidden = YES;}
+    else {self.slideToLeftView.hidden = NO;}
+    if (xOffset > xThreshold) {self.slideToRightView.hidden = YES;}
+    else {self.slideToRightView.hidden = NO;}
     
     if (sender.state == UIGestureRecognizerStateEnded) {
-        CGFloat xOffset = cell.contentView.center.x - cell.center.x;
-        CGFloat yCenter = cell.contentView.center.y;
-        CGFloat finalXPosition = cell.center.x;
-
         // Animate cell to correct final position
-        if (slideState == TSSlideStateToTheLeft && xOffset < -xThreshold) {
-            finalXPosition = -(cell.contentView.bounds.size.width  / 2.0);
+        if (xOffset < -xThreshold) {
+            finalXPosition = -(cell.contentView.bounds.size.width  / 2.0 + xThreshold);
         }
-        if (slideState == TSSlideStateToTheRight && xOffset > xThreshold) {
-            finalXPosition = (cell.contentView.bounds.size.width  * 1.5);
+        if (xOffset > xThreshold) {
+            finalXPosition = (cell.contentView.bounds.size.width  * 1.5) + xThreshold;
         }
                 
         CGPoint finalCenterPosition = CGPointMake(finalXPosition, yCenter);

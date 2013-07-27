@@ -9,6 +9,8 @@
 #import "TSViewController.h"
 #import "TSTableViewCell.h"
 
+#define CELL_HEIGHT 60.0
+
 @interface TSViewController ()
 
 @end
@@ -73,6 +75,8 @@
         cell = [[TSTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    CGRect cellFrame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, CELL_HEIGHT);
+    
     // Configure the cell...
     cell.textLabel.text = [arrayOfCells objectAtIndex:indexPath.row];
     cell.textLabel.textColor = [UIColor whiteColor];
@@ -90,22 +94,22 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     // Create slide views
-    UIView *slideLeftView = [[UIView alloc] initWithFrame:cell.frame];
+    UIView *slideLeftView = [[UIView alloc] initWithFrame:cellFrame];
     slideLeftView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     slideLeftView.backgroundColor = [UIColor orangeColor];
     cell.slideToLeftView = slideLeftView;
-
-//    Uncomment to implement slide to the right
-//    UIView *slideRightView = [[UIView alloc] initWithFrame:cell.frame];
-//    slideRightView.backgroundColor = [UIColor greenColor];
-//    cell.slideToRightView = slideRightView;
     
-    UIView *slideLeftHighlightedView = [[UIView alloc] initWithFrame:cell.frame];
+    UIView *slideLeftHighlightedView = [[UIView alloc] initWithFrame:cellFrame];
     slideLeftHighlightedView.backgroundColor = [UIColor redColor];
     cell.slideToLeftHighlightedView = slideLeftHighlightedView;
 
 //    Uncomment to implement slide to the right
-//    UIView *slideRightHighlightedView = [[UIView alloc] initWithFrame:cell.frame];
+//    UIView *slideRightView = [[UIView alloc] initWithFrame:cellFrame];
+//    slideRightView.backgroundColor = [UIColor greenColor];
+//    cell.slideToRightView = slideRightView;
+
+//    Uncomment to implement slide to the right
+//    UIView *slideRightHighlightedView = [[UIView alloc] initWithFrame:cellFrame];
 //    slideRightHighlightedView.backgroundColor = [UIColor blueColor];
 //    cell.slideToRightHighlightedView = slideLeftHighlightedView;
     
@@ -165,7 +169,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0;
+    return CELL_HEIGHT;
 }
 
 @end
