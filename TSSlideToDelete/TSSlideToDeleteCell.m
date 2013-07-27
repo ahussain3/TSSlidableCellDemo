@@ -92,7 +92,8 @@ typedef enum {
             cell.contentView.center = finalCenterPosition;
             cell.selectedBackgroundView.center = finalCenterPosition;
         } completion:^(BOOL completion){
-            
+            if (slideState == TSSlideStateToTheLeft) [self.delegate respondToCellSlidLeft:self];
+            if (slideState == TSSLideStateToTheRight) [self.delegate respondToCellSlidRight:self];
         }];
         
         slideState = TSSlideStateDormant;

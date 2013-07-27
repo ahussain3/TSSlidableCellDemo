@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TSSlideToDeleteCell;
+
+@protocol TSSlideToDeleteCellDelegate <NSObject>
+@optional
+-(void)respondToCellSlidLeft:(TSSlideToDeleteCell *)cell;
+-(void)respondToCellSlidRight:(TSSlideToDeleteCell *)cell;
+@end
 
 @interface TSSlideToDeleteCell : UITableViewCell {
     NSUInteger slideState;
@@ -21,5 +28,7 @@
 @property (nonatomic, strong) UIView *slideToRightView;
 @property (nonatomic, strong) UIView *slideToLeftHighlightedView;
 @property (nonatomic, strong) UIView *slideToRightHighlightedView;
+
+@property (nonatomic, strong) id<TSSlideToDeleteCellDelegate> delegate;
 
 @end
