@@ -89,7 +89,7 @@ typedef enum {
 }
 
 - (void)slideGestureHandler:(UIPanGestureRecognizer *)sender {
-    UITableViewCell * cell = (UITableViewCell *)sender.view;
+    TSSlideToDeleteCell * cell = (TSSlideToDeleteCell *)sender.view;
     CGPoint translation = [sender translationInView:cell];
     
     CGFloat xThreshold = 100.0;
@@ -113,17 +113,19 @@ typedef enum {
         [sender setTranslation:CGPointMake(0, 0) inView:cell];
     }
     
-    if (xOffset < -xThreshold) {self.slideToLeftView.hidden = YES;}
-    else {self.slideToLeftView.hidden = NO;}
-    if (xOffset > xThreshold) {self.slideToRightView.hidden = YES;}
-    else {self.slideToRightView.hidden = NO;}
+    if (xOffset < -xThreshold) {self.slideToLeftView.hidden = YES; self.slideToLeftHighlightedView.hidden = NO;}
+    else {self.slideToLeftView.hidden = NO; self.slideToLeftHighlightedView.hidden = NO;}
+    if (xOffset > xThreshold) {self.slideToRightView.hidden = YES; self.slideToRightHighlightedView.hidden = NO;}
+    else {self.slideToRightView.hidden = NO; self.slideToRightHighlightedView.hidden = NO;}
     
     if (sender.state == UIGestureRecognizerStateEnded) {
         // Animate cell to correct final position
-        if (xOffset < -xThreshold) {
+        if (slideState == TSSlideStateToTheLeft && xOffset < -xThreshold) {
             finalXPosition = -(cell.contentView.bounds.size.width  / 2.0 + xThreshold);
+            [self.delegate respondToCellSlidLeft:cell];
+
         }
-        if (xOffset > xThreshold) {
+        if (slideState == TSSlideStateToTheRight && xOffset > xThreshold) {
             finalXPosition = (cell.contentView.bounds.size.width  * 1.5) + xThreshold;
         }
                 
@@ -135,12 +137,10 @@ typedef enum {
             cell.contentView.center = finalCenterPosition;
             cell.selectedBackgroundView.center = finalCenterPosition;
         } completion:^(BOOL completion){
-            if (slideState == TSSlideStateToTheLeft) [self.delegate respondToCellSlidLeft:self];
-            if (slideState == TSSlideStateToTheRight) [self.delegate respondToCellSlidRight:self];
+
         }];
         
         slideState = TSSlideStateDormant;
-//        [self showViewsForSlideState:TSSlideStateDormant];
     }
     
     [self nextResponder];

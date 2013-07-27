@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TSTableViewCell.h"
 
-@interface TSViewController : UITableViewController {
+@interface TSViewController : UITableViewController <TSSlideToDeleteCellDelegate> {
     NSMutableArray *arrayOfCells;
 }
 

@@ -76,31 +76,39 @@
     }
     
     CGRect cellFrame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, CELL_HEIGHT);
+    cell.delegate = self;
     
     // Configure the cell...
+    cell.contentView.backgroundColor = [UIColor whiteColor];
     cell.textLabel.text = [arrayOfCells objectAtIndex:indexPath.row];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.backgroundColor = [UIColor purpleColor];
-    cell.contentView.backgroundColor = [UIColor purpleColor];
+    cell.textLabel.textColor = [UIColor purpleColor];
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:cell.frame];
-    backgroundView.backgroundColor = [UIColor blackColor];
+    backgroundView.backgroundColor = [UIColor lightGrayColor];
     cell.backgroundView = backgroundView;
-    
-    UIView *selectedView = [[UIView alloc] initWithFrame:cell.frame];
-    selectedView.backgroundColor = [UIColor greenColor];
-    cell.selectedBackgroundView = selectedView;
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     // Create slide views
     UIView *slideLeftView = [[UIView alloc] initWithFrame:cellFrame];
     slideLeftView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    slideLeftView.backgroundColor = [UIColor orangeColor];
+    UILabel *label = [[UILabel alloc] initWithFrame:slideLeftView.frame];
+    label.font = [UIFont boldSystemFontOfSize:18.0];
+    label.backgroundColor = [UIColor clearColor];
+    label.textAlignment = NSTextAlignmentRight;
+    label.text = @"Delete   ";
+    label.textColor = [UIColor whiteColor];
+    [slideLeftView addSubview:label];
     cell.slideToLeftView = slideLeftView;
     
     UIView *slideLeftHighlightedView = [[UIView alloc] initWithFrame:cellFrame];
-    slideLeftHighlightedView.backgroundColor = [UIColor redColor];
+    UILabel *redLabel = [[UILabel alloc] initWithFrame:slideLeftHighlightedView.frame];
+    redLabel.font = [UIFont boldSystemFontOfSize:18.0];
+    redLabel.backgroundColor = [UIColor clearColor];
+    redLabel.textAlignment = NSTextAlignmentRight;
+    redLabel.text = @"Delete   ";
+    redLabel.textColor = [UIColor purpleColor];
+    [slideLeftHighlightedView addSubview:redLabel];
     cell.slideToLeftHighlightedView = slideLeftHighlightedView;
 
 //    Uncomment to implement slide to the right
@@ -170,6 +178,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return CELL_HEIGHT;
+}
+
+#pragma mark - TSSlideToDeleteCellDelegate
+
+-(void)respondToCellSlidLeft:(TSSlideToDeleteCell *)cell {
+    if (cell) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        NSLog(@"Deleted cell row: %i", indexPath.row);
+        [arrayOfCells removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    }
 }
 
 @end

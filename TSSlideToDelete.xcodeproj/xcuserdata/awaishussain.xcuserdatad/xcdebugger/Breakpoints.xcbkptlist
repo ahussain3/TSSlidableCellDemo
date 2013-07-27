@@ -8,7 +8,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TSSlideToDelete/TSViewController.m"
-         timestampString = "396642193.970968"
+         timestampString = "396643409.120137"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "69"
@@ -26,7 +26,20 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "68"
          endingLineNumber = "68"
-         landmarkName = "-showViewsForSide:"
+         landmarkName = "-showViewsForSlideState:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TSSlideToDelete/TSViewController.m"
+         timestampString = "396645140.23491"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "185"
+         endingLineNumber = "185"
+         landmarkName = "-respondToCellSlidLeft:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
