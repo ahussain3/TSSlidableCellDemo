@@ -28,12 +28,13 @@ typedef enum {
     if (self) {
         // Initialization code
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(slideGestureHandler:)];
-        [self addGestureRecognizer:pan];
-        
+        pan.delegate = self;
+        [self.contentView addGestureRecognizer:pan];
+    
         slideState = TSSlideStateDormant;
         
         /*******************************/
-        // Haven't had time to work the kinks out of two way sliding //
+        // Haven't had time to work the kinks out of two-way sliding //
         self.slideRightDisabled = TRUE;
         /*******************************/
     }
@@ -89,8 +90,18 @@ typedef enum {
 }
 
 - (void)slideGestureHandler:(UIPanGestureRecognizer *)sender {
+    UITableView *tableView = (UITableView *)self.superview;
+    tableView.scrollEnabled = NO;
+    
     TSSlideToDeleteCell * cell = (TSSlideToDeleteCell *)sender.view;
     CGPoint translation = [sender translationInView:cell];
+    
+    if (slideState == TSSlideStateDormant && abs(translation.x) < 10.0) {
+        tableView.scrollEnabled = YES;
+        return;
+    } else {
+        tableView.scrollEnabled = NO;
+    }
     
     CGFloat xThreshold = 100.0;
     CGFloat xOffset = cell.contentView.center.x - cell.center.x;
@@ -141,9 +152,13 @@ typedef enum {
         }];
         
         slideState = TSSlideStateDormant;
+        tableView.scrollEnabled = YES;
     }
-    
-    [self nextResponder];
+}
+
+#pragma  mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
 
 @end

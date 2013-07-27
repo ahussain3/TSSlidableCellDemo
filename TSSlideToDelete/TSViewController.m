@@ -94,7 +94,7 @@
     slideLeftView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     UILabel *label = [[UILabel alloc] initWithFrame:slideLeftView.frame];
     label.font = [UIFont boldSystemFontOfSize:18.0];
-    label.backgroundColor = [UIColor clearColor];
+    label.backgroundColor = [UIColor lightGrayColor];
     label.textAlignment = NSTextAlignmentRight;
     label.text = @"Delete   ";
     label.textColor = [UIColor whiteColor];
@@ -104,7 +104,7 @@
     UIView *slideLeftHighlightedView = [[UIView alloc] initWithFrame:cellFrame];
     UILabel *redLabel = [[UILabel alloc] initWithFrame:slideLeftHighlightedView.frame];
     redLabel.font = [UIFont boldSystemFontOfSize:18.0];
-    redLabel.backgroundColor = [UIColor clearColor];
+    redLabel.backgroundColor = [UIColor lightGrayColor];
     redLabel.textAlignment = NSTextAlignmentRight;
     redLabel.text = @"Delete   ";
     redLabel.textColor = [UIColor purpleColor];

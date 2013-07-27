@@ -15,7 +15,7 @@
 -(void)respondToCellSlidRight:(TSSlideToDeleteCell *)cell;
 @end
 
-@interface TSSlideToDeleteCell : UITableViewCell {
+@interface TSSlideToDeleteCell : UITableViewCell <UIGestureRecognizerDelegate> {
     NSUInteger slideState;
 }
 
