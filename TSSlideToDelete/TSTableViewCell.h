@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 TimeStamp. All rights reserved.
 //
 
-#import "TSSlideToDeleteCell.h"
+#import "TSSlidableCell.h"
 
-@interface TSTableViewCell : TSSlideToDeleteCell
+@interface TSTableViewCell : TSSlidableCell
 
 @end

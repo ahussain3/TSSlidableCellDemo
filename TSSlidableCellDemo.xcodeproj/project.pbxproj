@@ -23,7 +23,7 @@
 		C8FF163117A3F0E00064BA83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8FF162F17A3F0E00064BA83 /* InfoPlist.strings */; };
 		C8FF163417A3F0E00064BA83 /* TSSlideToDeleteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF163317A3F0E00064BA83 /* TSSlideToDeleteTests.m */; };
 		C8FF163F17A3F1CA0064BA83 /* TSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF163E17A3F1CA0064BA83 /* TSViewController.m */; };
-		C8FF164217A3F1F30064BA83 /* TSSlideToDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF164117A3F1F30064BA83 /* TSSlideToDeleteCell.m */; };
+		C8FF164217A3F1F30064BA83 /* TSSlidableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF164117A3F1F30064BA83 /* TSSlidableCell.m */; };
 		C8FF164517A3F2240064BA83 /* TSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8FF164417A3F2240064BA83 /* TSTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -38,30 +38,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C8FF15FF17A3F0DF0064BA83 /* TSSlideToDelete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSSlideToDelete.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8FF15FF17A3F0DF0064BA83 /* TSSlidableCellDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TSSlidableCellDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FF160217A3F0DF0064BA83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C8FF160417A3F0DF0064BA83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C8FF160617A3F0DF0064BA83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C8FF160A17A3F0DF0064BA83 /* TSSlideToDelete-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TSSlideToDelete-Info.plist"; sourceTree = "<group>"; };
+		C8FF160A17A3F0DF0064BA83 /* TSSlidableCellDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TSSlidableCellDemo-Info.plist"; sourceTree = "<group>"; };
 		C8FF160C17A3F0DF0064BA83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C8FF160E17A3F0DF0064BA83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C8FF161017A3F0DF0064BA83 /* TSSlideToDelete-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TSSlideToDelete-Prefix.pch"; sourceTree = "<group>"; };
+		C8FF161017A3F0DF0064BA83 /* TSSlidableCellDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TSSlidableCellDemo-Prefix.pch"; sourceTree = "<group>"; };
 		C8FF161117A3F0DF0064BA83 /* TSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSAppDelegate.h; sourceTree = "<group>"; };
 		C8FF161217A3F0DF0064BA83 /* TSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSAppDelegate.m; sourceTree = "<group>"; };
 		C8FF161417A3F0DF0064BA83 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C8FF161617A3F0DF0064BA83 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C8FF161817A3F0DF0064BA83 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C8FF161B17A3F0DF0064BA83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C8FF162517A3F0E00064BA83 /* TSSlideToDeleteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSSlideToDeleteTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8FF162517A3F0E00064BA83 /* TSSlidableCellDemoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TSSlidableCellDemoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8FF162617A3F0E00064BA83 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C8FF162E17A3F0E00064BA83 /* TSSlideToDeleteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TSSlideToDeleteTests-Info.plist"; sourceTree = "<group>"; };
+		C8FF162E17A3F0E00064BA83 /* TSSlidableCellDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TSSlidableCellDemoTests-Info.plist"; sourceTree = "<group>"; };
 		C8FF163017A3F0E00064BA83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C8FF163217A3F0E00064BA83 /* TSSlideToDeleteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSSlideToDeleteTests.h; sourceTree = "<group>"; };
 		C8FF163317A3F0E00064BA83 /* TSSlideToDeleteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSSlideToDeleteTests.m; sourceTree = "<group>"; };
 		C8FF163D17A3F1CA0064BA83 /* TSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSViewController.h; sourceTree = "<group>"; };
 		C8FF163E17A3F1CA0064BA83 /* TSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSViewController.m; sourceTree = "<group>"; };
-		C8FF164017A3F1F30064BA83 /* TSSlideToDeleteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSlideToDeleteCell.h; sourceTree = "<group>"; };
-		C8FF164117A3F1F30064BA83 /* TSSlideToDeleteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSlideToDeleteCell.m; sourceTree = "<group>"; };
+		C8FF164017A3F1F30064BA83 /* TSSlidableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSlidableCell.h; sourceTree = "<group>"; };
+		C8FF164117A3F1F30064BA83 /* TSSlidableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSlidableCell.m; sourceTree = "<group>"; };
 		C8FF164317A3F2240064BA83 /* TSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTableViewCell.h; sourceTree = "<group>"; };
 		C8FF164417A3F2240064BA83 /* TSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,8 +93,8 @@
 		C8FF15F617A3F0DF0064BA83 = {
 			isa = PBXGroup;
 			children = (
-				C8FF160817A3F0DF0064BA83 /* TSSlideToDelete */,
-				C8FF162C17A3F0E00064BA83 /* TSSlideToDeleteTests */,
+				C8FF160817A3F0DF0064BA83 /* TSSlidableCellDemo */,
+				C8FF162C17A3F0E00064BA83 /* TSSlidableCellDemo */,
 				C8FF160117A3F0DF0064BA83 /* Frameworks */,
 				C8FF160017A3F0DF0064BA83 /* Products */,
 			);
@@ -103,8 +103,8 @@
 		C8FF160017A3F0DF0064BA83 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8FF15FF17A3F0DF0064BA83 /* TSSlideToDelete.app */,
-				C8FF162517A3F0E00064BA83 /* TSSlideToDeleteTests.octest */,
+				C8FF15FF17A3F0DF0064BA83 /* TSSlidableCellDemo.app */,
+				C8FF162517A3F0E00064BA83 /* TSSlidableCellDemoTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,7 +120,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C8FF160817A3F0DF0064BA83 /* TSSlideToDelete */ = {
+		C8FF160817A3F0DF0064BA83 /* TSSlidableCellDemo */ = {
 			isa = PBXGroup;
 			children = (
 				C8FF161117A3F0DF0064BA83 /* TSAppDelegate.h */,
@@ -132,18 +132,19 @@
 				C8FF161A17A3F0DF0064BA83 /* MainStoryboard.storyboard */,
 				C8FF160917A3F0DF0064BA83 /* Supporting Files */,
 			);
+			name = TSSlidableCellDemo;
 			path = TSSlideToDelete;
 			sourceTree = "<group>";
 		};
 		C8FF160917A3F0DF0064BA83 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8FF164017A3F1F30064BA83 /* TSSlideToDeleteCell.h */,
-				C8FF164117A3F1F30064BA83 /* TSSlideToDeleteCell.m */,
-				C8FF160A17A3F0DF0064BA83 /* TSSlideToDelete-Info.plist */,
+				C8FF164017A3F1F30064BA83 /* TSSlidableCell.h */,
+				C8FF164117A3F1F30064BA83 /* TSSlidableCell.m */,
+				C8FF160A17A3F0DF0064BA83 /* TSSlidableCellDemo-Info.plist */,
 				C8FF160B17A3F0DF0064BA83 /* InfoPlist.strings */,
 				C8FF160E17A3F0DF0064BA83 /* main.m */,
-				C8FF161017A3F0DF0064BA83 /* TSSlideToDelete-Prefix.pch */,
+				C8FF161017A3F0DF0064BA83 /* TSSlidableCellDemo-Prefix.pch */,
 				C8FF161417A3F0DF0064BA83 /* Default.png */,
 				C8FF161617A3F0DF0064BA83 /* Default@2x.png */,
 				C8FF161817A3F0DF0064BA83 /* Default-568h@2x.png */,
@@ -151,20 +152,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C8FF162C17A3F0E00064BA83 /* TSSlideToDeleteTests */ = {
+		C8FF162C17A3F0E00064BA83 /* TSSlidableCellDemo */ = {
 			isa = PBXGroup;
 			children = (
 				C8FF163217A3F0E00064BA83 /* TSSlideToDeleteTests.h */,
 				C8FF163317A3F0E00064BA83 /* TSSlideToDeleteTests.m */,
 				C8FF162D17A3F0E00064BA83 /* Supporting Files */,
 			);
+			name = TSSlidableCellDemo;
 			path = TSSlideToDeleteTests;
 			sourceTree = "<group>";
 		};
 		C8FF162D17A3F0E00064BA83 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8FF162E17A3F0E00064BA83 /* TSSlideToDeleteTests-Info.plist */,
+				C8FF162E17A3F0E00064BA83 /* TSSlidableCellDemoTests-Info.plist */,
 				C8FF162F17A3F0E00064BA83 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -173,9 +175,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8FF15FE17A3F0DF0064BA83 /* TSSlideToDelete */ = {
+		C8FF15FE17A3F0DF0064BA83 /* TSSlidableCellDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8FF163717A3F0E00064BA83 /* Build configuration list for PBXNativeTarget "TSSlideToDelete" */;
+			buildConfigurationList = C8FF163717A3F0E00064BA83 /* Build configuration list for PBXNativeTarget "TSSlidableCellDemo" */;
 			buildPhases = (
 				C8FF15FB17A3F0DF0064BA83 /* Sources */,
 				C8FF15FC17A3F0DF0064BA83 /* Frameworks */,
@@ -185,14 +187,14 @@
 			);
 			dependencies = (
 			);
-			name = TSSlideToDelete;
+			name = TSSlidableCellDemo;
 			productName = TSSlideToDelete;
-			productReference = C8FF15FF17A3F0DF0064BA83 /* TSSlideToDelete.app */;
+			productReference = C8FF15FF17A3F0DF0064BA83 /* TSSlidableCellDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C8FF162417A3F0E00064BA83 /* TSSlideToDeleteTests */ = {
+		C8FF162417A3F0E00064BA83 /* TSSlidableCellDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8FF163A17A3F0E00064BA83 /* Build configuration list for PBXNativeTarget "TSSlideToDeleteTests" */;
+			buildConfigurationList = C8FF163A17A3F0E00064BA83 /* Build configuration list for PBXNativeTarget "TSSlidableCellDemoTests" */;
 			buildPhases = (
 				C8FF162017A3F0E00064BA83 /* Sources */,
 				C8FF162117A3F0E00064BA83 /* Frameworks */,
@@ -204,9 +206,9 @@
 			dependencies = (
 				C8FF162B17A3F0E00064BA83 /* PBXTargetDependency */,
 			);
-			name = TSSlideToDeleteTests;
+			name = TSSlidableCellDemoTests;
 			productName = TSSlideToDeleteTests;
-			productReference = C8FF162517A3F0E00064BA83 /* TSSlideToDeleteTests.octest */;
+			productReference = C8FF162517A3F0E00064BA83 /* TSSlidableCellDemoTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +221,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = TimeStamp;
 			};
-			buildConfigurationList = C8FF15FA17A3F0DF0064BA83 /* Build configuration list for PBXProject "TSSlideToDelete" */;
+			buildConfigurationList = C8FF15FA17A3F0DF0064BA83 /* Build configuration list for PBXProject "TSSlidableCellDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,8 +233,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C8FF15FE17A3F0DF0064BA83 /* TSSlideToDelete */,
-				C8FF162417A3F0E00064BA83 /* TSSlideToDeleteTests */,
+				C8FF15FE17A3F0DF0064BA83 /* TSSlidableCellDemo */,
+				C8FF162417A3F0E00064BA83 /* TSSlidableCellDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -284,7 +286,7 @@
 				C8FF160F17A3F0DF0064BA83 /* main.m in Sources */,
 				C8FF161317A3F0DF0064BA83 /* TSAppDelegate.m in Sources */,
 				C8FF163F17A3F1CA0064BA83 /* TSViewController.m in Sources */,
-				C8FF164217A3F1F30064BA83 /* TSSlideToDeleteCell.m in Sources */,
+				C8FF164217A3F1F30064BA83 /* TSSlidableCell.m in Sources */,
 				C8FF164517A3F2240064BA83 /* TSTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +304,7 @@
 /* Begin PBXTargetDependency section */
 		C8FF162B17A3F0E00064BA83 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C8FF15FE17A3F0DF0064BA83 /* TSSlideToDelete */;
+			target = C8FF15FE17A3F0DF0064BA83 /* TSSlidableCellDemo */;
 			targetProxy = C8FF162A17A3F0E00064BA83 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -395,9 +397,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TSSlideToDelete/TSSlideToDelete-Prefix.pch";
-				INFOPLIST_FILE = "TSSlideToDelete/TSSlideToDelete-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TSSlideToDelete/TSSlidableCellDemo-Prefix.pch";
+				INFOPLIST_FILE = "TSSlideToDelete/TSSlidableCellDemo-Info.plist";
+				PRODUCT_NAME = TSSlidableCellDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,9 +408,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TSSlideToDelete/TSSlideToDelete-Prefix.pch";
-				INFOPLIST_FILE = "TSSlideToDelete/TSSlideToDelete-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TSSlideToDelete/TSSlidableCellDemo-Prefix.pch";
+				INFOPLIST_FILE = "TSSlideToDelete/TSSlidableCellDemo-Info.plist";
+				PRODUCT_NAME = TSSlidableCellDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -423,8 +425,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TSSlideToDelete/TSSlideToDelete-Prefix.pch";
-				INFOPLIST_FILE = "TSSlideToDeleteTests/TSSlideToDeleteTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TSSlideToDeleteTests/TSSlidableCellDemoTests-Info.plist";
+				PRODUCT_NAME = TSSlidableCellDemoTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -440,8 +442,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TSSlideToDelete/TSSlideToDelete-Prefix.pch";
-				INFOPLIST_FILE = "TSSlideToDeleteTests/TSSlideToDeleteTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TSSlideToDeleteTests/TSSlidableCellDemoTests-Info.plist";
+				PRODUCT_NAME = TSSlidableCellDemoTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -450,7 +452,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C8FF15FA17A3F0DF0064BA83 /* Build configuration list for PBXProject "TSSlideToDelete" */ = {
+		C8FF15FA17A3F0DF0064BA83 /* Build configuration list for PBXProject "TSSlidableCellDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8FF163517A3F0E00064BA83 /* Debug */,
@@ -459,7 +461,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8FF163717A3F0E00064BA83 /* Build configuration list for PBXNativeTarget "TSSlideToDelete" */ = {
+		C8FF163717A3F0E00064BA83 /* Build configuration list for PBXNativeTarget "TSSlidableCellDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8FF163817A3F0E00064BA83 /* Debug */,
@@ -467,7 +469,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		C8FF163A17A3F0E00064BA83 /* Build configuration list for PBXNativeTarget "TSSlideToDeleteTests" */ = {
+		C8FF163A17A3F0E00064BA83 /* Build configuration list for PBXNativeTarget "TSSlidableCellDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C8FF163B17A3F0E00064BA83 /* Debug */,

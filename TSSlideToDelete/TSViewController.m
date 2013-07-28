@@ -35,7 +35,7 @@
         
         arrayOfCells = [[NSMutableArray alloc] initWithCapacity:numberOfItems];
         for (NSInteger ii = 0; ii < numberOfItems; ii++) {
-            [arrayOfCells addObject:[NSString stringWithFormat:@"Cell #%i", ii + 1]];
+            [arrayOfCells addObject:[NSString stringWithFormat:@"Cell #%i - Sample Text", ii + 1]];
         }
     }
     
@@ -70,7 +70,7 @@
 {
     // It's a little hack-ish that we're not using dequeue cell. Keep number of table element small, or find a way to reuse cells without making everything look ugly.
     static NSString *CellIdentifier = @"Cell";
-    TSSlideToDeleteCell *cell = [[TSTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    TSSlidableCell *cell = [[TSTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
     CGRect cellFrame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, CELL_HEIGHT);
     cell.delegate = self;
@@ -179,7 +179,7 @@
 
 #pragma mark - TSSlideToDeleteCellDelegate
 
--(void)respondToCellSlidLeft:(TSSlideToDeleteCell *)cell {
+-(void)respondToCellSlidLeft:(TSSlidableCell *)cell {
     if (cell) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         NSLog(@"Deleted cell row: %i", indexPath.row);

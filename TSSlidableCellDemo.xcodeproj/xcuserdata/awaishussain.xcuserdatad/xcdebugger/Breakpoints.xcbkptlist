@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TSSlideToDelete/TSSlideToDeleteCell.m"
-         timestampString = "396646653.607268"
+         timestampString = "396670003.94819"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
+         startingLineNumber = "70"
+         endingLineNumber = "70"
          landmarkName = "-showViewsForSlideState:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -33,38 +33,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "TSSlideToDelete/TSViewController.m"
-         timestampString = "396666514.174612"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "182"
-         endingLineNumber = "182"
-         landmarkName = "-respondToCellSlidLeft:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "TSSlideToDelete/TSSlideToDeleteCell.m"
-         timestampString = "396668356.759927"
+         timestampString = "396670003.94819"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
-         landmarkName = "-slideGestureHandler:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TSSlideToDelete/TSSlideToDeleteCell.m"
-         timestampString = "396668274.718617"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
          landmarkName = "-slideGestureHandler:"
          landmarkType = "5">
       </FileBreakpoint>

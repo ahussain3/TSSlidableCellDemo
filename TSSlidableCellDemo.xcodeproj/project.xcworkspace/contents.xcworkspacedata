@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TSSlideToDelete.xcodeproj">
+      location = "self:TSSlidableCellDemo.xcodeproj">
    </FileRef>
 </Workspace>

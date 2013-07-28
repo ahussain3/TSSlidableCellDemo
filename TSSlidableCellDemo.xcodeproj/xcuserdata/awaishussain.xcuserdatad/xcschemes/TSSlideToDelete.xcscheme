@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8FF15FE17A3F0DF0064BA83"
                BuildableName = "TSSlideToDelete.app"
-               BlueprintName = "TSSlideToDelete"
-               ReferencedContainer = "container:TSSlideToDelete.xcodeproj">
+               BlueprintName = "TSSlidableCellDemo"
+               ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8FF162417A3F0E00064BA83"
                BuildableName = "TSSlideToDeleteTests.octest"
-               BlueprintName = "TSSlideToDeleteTests"
-               ReferencedContainer = "container:TSSlideToDelete.xcodeproj">
+               BlueprintName = "TSSlidableCellDemoTests"
+               ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8FF15FE17A3F0DF0064BA83"
             BuildableName = "TSSlideToDelete.app"
-            BlueprintName = "TSSlideToDelete"
-            ReferencedContainer = "container:TSSlideToDelete.xcodeproj">
+            BlueprintName = "TSSlidableCellDemo"
+            ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8FF15FE17A3F0DF0064BA83"
             BuildableName = "TSSlideToDelete.app"
-            BlueprintName = "TSSlideToDelete"
-            ReferencedContainer = "container:TSSlideToDelete.xcodeproj">
+            BlueprintName = "TSSlidableCellDemo"
+            ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8FF15FE17A3F0DF0064BA83"
             BuildableName = "TSSlideToDelete.app"
-            BlueprintName = "TSSlideToDelete"
-            ReferencedContainer = "container:TSSlideToDelete.xcodeproj">
+            BlueprintName = "TSSlidableCellDemo"
+            ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
