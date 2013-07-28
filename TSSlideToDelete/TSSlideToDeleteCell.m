@@ -11,7 +11,8 @@
 typedef enum {
     TSSlideStateDormant,
     TSSlideStateToTheLeft,
-    TSSlideStateToTheRight
+    TSSlideStateToTheRight,
+    TSSlideStateSliding
 } TSSlideState;
 
 @interface TSSlideToDeleteCell () {
@@ -90,38 +91,43 @@ typedef enum {
 }
 
 - (void)slideGestureHandler:(UIPanGestureRecognizer *)sender {
+    NSLog(@"Gesture Rec. State: %i", sender.state);
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"Gesture State Ended");
+    }
+    
     UITableView *tableView = (UITableView *)self.superview;
-    tableView.scrollEnabled = NO;
-    
-    TSSlideToDeleteCell * cell = (TSSlideToDeleteCell *)sender.view;
-    CGPoint translation = [sender translationInView:cell];
-    
-    if (slideState == TSSlideStateDormant && abs(translation.x) < 10.0) {
-        tableView.scrollEnabled = YES;
-        return;
-    } else {
-        tableView.scrollEnabled = NO;
+    CGPoint translation = [sender translationInView:self];
+    if (sender.state != UIGestureRecognizerStateChanged) {
+        CGFloat theta =  (180 / M_PI) * atanf(translation.y / translation.x);
+        NSLog(@"theta: %f", theta);
+        if (fabsf(theta) > 20.0) {
+            tableView.scrollEnabled = YES;
+            return;
+        } else {
+            tableView.scrollEnabled = NO;
+        }
     }
     
     CGFloat xThreshold = 100.0;
-    CGFloat xOffset = cell.contentView.center.x - cell.center.x;
-    CGFloat yCenter = cell.contentView.center.y;
-    CGFloat finalXPosition = cell.center.x;
+    CGFloat xOffset = self.contentView.center.x - self.center.x;
+    CGFloat yCenter = self.contentView.center.y;
+    CGFloat finalXPosition = self.center.x;
     
     if (translation.x < 0 && !(self.slideLeftDisabled && slideState == TSSlideStateDormant)) {
         [self showViewsForSlideState:TSSlideStateToTheLeft];
         slideState = TSSlideStateToTheLeft;
         
-        cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
-        cell.selectedBackgroundView.center = CGPointMake(cell.selectedBackgroundView.center.x + translation.x, cell.selectedBackgroundView.center.y);
-        [sender setTranslation:CGPointMake(0, 0) inView:cell];
+        self.contentView.center = CGPointMake(self.contentView.center.x + translation.x, self.contentView.center.y);
+        self.selectedBackgroundView.center = CGPointMake(self.selectedBackgroundView.center.x + translation.x, self.selectedBackgroundView.center.y);
+        [sender setTranslation:CGPointMake(0, 0) inView:self];
         
     } else if (translation.x > 0 && !(self.slideRightDisabled && slideState == TSSlideStateDormant)) {
         [self showViewsForSlideState:TSSlideStateToTheRight];
         slideState = TSSlideStateToTheRight;
-        cell.contentView.center = CGPointMake(cell.contentView.center.x + translation.x, cell.contentView.center.y);
-        cell.selectedBackgroundView.center = CGPointMake(cell.selectedBackgroundView.center.x + translation.x, cell.selectedBackgroundView.center.y);
-        [sender setTranslation:CGPointMake(0, 0) inView:cell];
+        self.contentView.center = CGPointMake(fminf(self.contentView.center.x + translation.x, self.center.x), self.contentView.center.y);
+        self.selectedBackgroundView.center = CGPointMake(fminf(self.selectedBackgroundView.center.x + translation.x, self.center.x), self.selectedBackgroundView.center.y);
+        [sender setTranslation:CGPointMake(0, 0) inView:self];
     }
     
     if (xOffset < -xThreshold) {self.slideToLeftView.hidden = YES; self.slideToLeftHighlightedView.hidden = NO;}
@@ -132,21 +138,22 @@ typedef enum {
     if (sender.state == UIGestureRecognizerStateEnded) {
         // Animate cell to correct final position
         if (slideState == TSSlideStateToTheLeft && xOffset < -xThreshold) {
-            finalXPosition = -(cell.contentView.bounds.size.width  / 2.0 + xThreshold);
-            [self.delegate respondToCellSlidLeft:cell];
+            finalXPosition = -(self.contentView.bounds.size.width  / 2.0 + xThreshold);
+            [self.delegate respondToCellSlidLeft:self];
 
         }
         if (slideState == TSSlideStateToTheRight && xOffset > xThreshold) {
-            finalXPosition = (cell.contentView.bounds.size.width  * 1.5) + xThreshold;
+            finalXPosition = (self.contentView.bounds.size.width  * 1.5) + xThreshold;
+            [self.delegate respondToCellSlidRight:self];
         }
-                
+        
         CGPoint finalCenterPosition = CGPointMake(finalXPosition, yCenter);
-        CGPoint velocity = [sender velocityInView:cell];
+        CGPoint velocity = [sender velocityInView:self];
         NSTimeInterval duration = fmaxf(0.1f,fminf(0.3f, fabs((xOffset - finalXPosition) / velocity.x)));
  
         [UIView animateWithDuration:duration animations:^{
-            cell.contentView.center = finalCenterPosition;
-            cell.selectedBackgroundView.center = finalCenterPosition;
+            self.contentView.center = finalCenterPosition;
+            self.selectedBackgroundView.center = finalCenterPosition;
         } completion:^(BOOL completion){
 
         }];
@@ -154,6 +161,11 @@ typedef enum {
         slideState = TSSlideStateDormant;
         tableView.scrollEnabled = YES;
     }
+}
+
+- (void)resetSlidableCell {
+    // This is called to make the cell reusable
+    
 }
 
 #pragma  mark - UIGestureRecognizerDelegate

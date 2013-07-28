@@ -19,6 +19,8 @@
     NSUInteger slideState;
 }
 
+- (void)resetSlidableCell;
+
 // Configuration settings
 @property (nonatomic) BOOL slideLeftDisabled;
 @property (nonatomic) BOOL slideRightDisabled;
