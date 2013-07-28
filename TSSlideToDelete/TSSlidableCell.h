@@ -60,6 +60,10 @@ IMPLEMENTATION NOTES:
 @property (nonatomic) BOOL slideLeftDisabled;
 @property (nonatomic) BOOL slideRightDisabled;
 
+// Add any subviews you create to this autorelease pool to facilitate cell reuse.
+@property (nonatomic, strong) NSMutableArray *releasePool;
+- (void)resetCell;
+
 // Subclass should assign these views. The cell will slide out of the way to reveal these views.
 @property (nonatomic, strong) UIView *slideToLeftView;
 @property (nonatomic, strong) UIView *slideToRightView;

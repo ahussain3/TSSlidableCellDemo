@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8FF15FE17A3F0DF0064BA83"
-               BuildableName = "TSSlideToDelete.app"
+               BuildableName = "TSSlidableCellDemo.app"
                BlueprintName = "TSSlidableCellDemo"
                ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C8FF162417A3F0E00064BA83"
-               BuildableName = "TSSlideToDeleteTests.octest"
+               BuildableName = "TSSlidableCellDemoTests.octest"
                BlueprintName = "TSSlidableCellDemoTests"
                ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8FF15FE17A3F0DF0064BA83"
-            BuildableName = "TSSlideToDelete.app"
+            BuildableName = "TSSlidableCellDemo.app"
             BlueprintName = "TSSlidableCellDemo"
             ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8FF15FE17A3F0DF0064BA83"
-            BuildableName = "TSSlideToDelete.app"
+            BuildableName = "TSSlidableCellDemo.app"
             BlueprintName = "TSSlidableCellDemo"
             ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C8FF15FE17A3F0DF0064BA83"
-            BuildableName = "TSSlideToDelete.app"
+            BuildableName = "TSSlidableCellDemo.app"
             BlueprintName = "TSSlidableCellDemo"
             ReferencedContainer = "container:TSSlidableCellDemo.xcodeproj">
          </BuildableReference>

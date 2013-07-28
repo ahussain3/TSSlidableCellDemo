@@ -56,18 +56,22 @@ typedef enum {
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-
+    
     if (self.slideToLeftView != nil) {
-        [self insertSubview:self.slideToLeftView aboveSubview:self.backgroundView];
+        if (self.backgroundView) [self insertSubview:self.slideToLeftView aboveSubview:self.backgroundView];
+        else [self insertSubview:self.slideToLeftView atIndex:0];
     }
     if (self.slideToLeftHighlightedView != nil) {
-        [self insertSubview:self.slideToLeftHighlightedView aboveSubview:self.backgroundView];
+        if (self.backgroundView) [self insertSubview:self.slideToLeftHighlightedView aboveSubview:self.backgroundView];
+        else [self insertSubview:self.slideToLeftHighlightedView atIndex:0];
     }
     if (self.slideToRightView != nil) {
-        [self insertSubview:self.slideToRightView aboveSubview:self.backgroundView];
+        if (self.backgroundView) [self insertSubview:self.slideToRightView aboveSubview:self.backgroundView];
+        else [self insertSubview:self.slideToRightView atIndex:0];
     }
     if (self.slideToRightHighlightedView != nil) {
-        [self insertSubview:self.slideToRightHighlightedView aboveSubview:self.backgroundView];
+        if (self.backgroundView) [self insertSubview:self.slideToRightHighlightedView aboveSubview:self.backgroundView];
+        else [self insertSubview:self.slideToRightHighlightedView atIndex:0];
     }
 }
 
@@ -144,6 +148,14 @@ typedef enum {
         
         slideState = TSSlideStateDormant;
         tableView.scrollEnabled = YES;
+    }
+}
+
+- (void)resetCell {
+    for (UIView *subview in self.releasePool) {
+        if ([subview respondsToSelector:@selector(removeFromSuperview)]) {
+            [subview removeFromSuperview];
+        }
     }
 }
 
